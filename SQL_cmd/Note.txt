@@ -1,0 +1,26 @@
+Tuấn: quản lý sách
+Tuấn ANh: Quản  lý người đọc
+
+Login Form:
+	btnSign_in
+	btnSign_up
+	btnClose
+	btnShowPassword
+	txtUsername
+	txtPassword
+Fill_Infor From:
+	btnClose
+	btnFill
+	btnClear
+	txtHoTen
+	txtMaSV
+	txtDonVi
+	txtDiaChi	
+	txtSoDT
+Sign_up Form:
+	txtUsername
+	txtPassword
+	btnShowPassword
+	
+Menu Form
+Focus() con trỏ nhảy đến vị trí 

@@ -1,0 +1,3 @@
+Đăng nhập ==> main menu
+
+Đăng kí(Sign_up) ==> Điền thông tin(Fill_infor). Trong quá trình điền thông tin, xét duyệt các thông tin đã tồn tại hay chưa(Bắt lỗi PK ở Mã SV) => tính năng tìm tài khoản (Thông qua HoTen,MSV,Email ==> truy vấn về loginTable xuất tài khoản có thông tin trên.
