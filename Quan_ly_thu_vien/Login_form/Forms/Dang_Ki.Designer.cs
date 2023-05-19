@@ -118,7 +118,7 @@
             this.btnDangKi.Name = "btnDangKi";
             this.btnDangKi.Size = new System.Drawing.Size(101, 40);
             this.btnDangKi.TabIndex = 7;
-            this.btnDangKi.Text = "Đăng kí";
+            this.btnDangKi.Text = "Tiếp tục";
             this.btnDangKi.UseVisualStyleBackColor = false;
             this.btnDangKi.Click += new System.EventHandler(this.btnDangKi_Click);
             // 
