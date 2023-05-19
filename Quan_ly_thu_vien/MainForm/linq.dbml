@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quan_ly_thu_vien" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAYTINH\SQLEXPRESS;Initial Catalog=Quan_ly_thu_vien;Integrated Security=True" SettingsObjectName="MainForm.Properties.Settings" SettingsPropertyName="Quan_ly_thu_vienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Returns]" Member="Returns">
+    <Type Name="Return">
+      <Column Name="returnID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="borrowID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="return_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="quantity_returned" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="late_fee" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Borrow_Return" Member="Borrow" ThisKey="borrowID" OtherKey="borrowID" Type="Borrow" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Readers" Member="Readers">
+    <Type Name="Reader">
+      <Column Name="readerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="student_code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phone_num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Reader_Borrow" Member="Borrows" ThisKey="readerID" OtherKey="readerID" Type="Borrow" />
+      <Association Name="Account_Reader" Member="Account" ThisKey="readerID" OtherKey="readerID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Borrows" Member="Borrows">
+    <Type Name="Borrow">
+      <Column Name="borrowID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="readerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="borrow_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="due_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="quantity_borrowed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Borrow_Return" Member="Returns" ThisKey="borrowID" OtherKey="borrowID" Type="Return" />
+      <Association Name="Reader_Borrow" Member="Reader" ThisKey="readerID" OtherKey="readerID" Type="Reader" IsForeignKey="true" />
+      <Association Name="Book_Borrow" Member="Book" ThisKey="bookID" OtherKey="bookID" Type="Book" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Book">
+      <Column Name="bookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="year_published" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Book_Borrow" Member="Borrows" ThisKey="bookID" OtherKey="bookID" Type="Borrow" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="readerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Reader" Member="Reader" ThisKey="readerID" OtherKey="readerID" Type="Reader" Cardinality="One" />
+    </Type>
+  </Table>
+</Database>

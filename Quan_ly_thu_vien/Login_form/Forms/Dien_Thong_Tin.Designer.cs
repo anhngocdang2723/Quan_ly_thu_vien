@@ -41,12 +41,12 @@
             this.txtXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.gradient_Panel1 = new Login_form.Gradient_Panel();
-            this.gradient_Panel2 = new Login_form.Gradient_Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.gradient_Panel2 = new Login_form.Gradient_Panel();
             this.gradient_Panel1.SuspendLayout();
-            this.gradient_Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gradient_Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -135,11 +135,11 @@
             this.btnTiepTuc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTiepTuc.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiepTuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTiepTuc.Location = new System.Drawing.Point(210, 457);
+            this.btnTiepTuc.Location = new System.Drawing.Point(229, 457);
             this.btnTiepTuc.Name = "btnTiepTuc";
-            this.btnTiepTuc.Size = new System.Drawing.Size(138, 41);
+            this.btnTiepTuc.Size = new System.Drawing.Size(119, 41);
             this.btnTiepTuc.TabIndex = 5;
-            this.btnTiepTuc.Text = "Hoàn thành";
+            this.btnTiepTuc.Text = "Tiếp tục";
             this.btnTiepTuc.UseVisualStyleBackColor = false;
             this.btnTiepTuc.Click += new System.EventHandler(this.btnTiepTuc_Click);
             // 
@@ -194,20 +194,6 @@
             this.gradient_Panel1.Size = new System.Drawing.Size(500, 550);
             this.gradient_Panel1.TabIndex = 11;
             // 
-            // gradient_Panel2
-            // 
-            this.gradient_Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.gradient_Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gradient_Panel2.ColorButtom = System.Drawing.Color.Empty;
-            this.gradient_Panel2.ColorTop = System.Drawing.Color.Empty;
-            this.gradient_Panel2.Controls.Add(this.pictureBox1);
-            this.gradient_Panel2.Controls.Add(this.btnThoat);
-            this.gradient_Panel2.Controls.Add(this.label5);
-            this.gradient_Panel2.Location = new System.Drawing.Point(12, 12);
-            this.gradient_Panel2.Name = "gradient_Panel2";
-            this.gradient_Panel2.Size = new System.Drawing.Size(476, 526);
-            this.gradient_Panel2.TabIndex = 10;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -231,6 +217,20 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Vui lòng điền đầy đủ thông tin";
             // 
+            // gradient_Panel2
+            // 
+            this.gradient_Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.gradient_Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gradient_Panel2.ColorButtom = System.Drawing.Color.Empty;
+            this.gradient_Panel2.ColorTop = System.Drawing.Color.Empty;
+            this.gradient_Panel2.Controls.Add(this.pictureBox1);
+            this.gradient_Panel2.Controls.Add(this.btnThoat);
+            this.gradient_Panel2.Controls.Add(this.label5);
+            this.gradient_Panel2.Location = new System.Drawing.Point(12, 12);
+            this.gradient_Panel2.Name = "gradient_Panel2";
+            this.gradient_Panel2.Size = new System.Drawing.Size(476, 526);
+            this.gradient_Panel2.TabIndex = 10;
+            // 
             // Dien_Thong_Tin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,9 +243,9 @@
             this.Text = "Dien_Thong_Tin";
             this.gradient_Panel1.ResumeLayout(false);
             this.gradient_Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradient_Panel2.ResumeLayout(false);
             this.gradient_Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

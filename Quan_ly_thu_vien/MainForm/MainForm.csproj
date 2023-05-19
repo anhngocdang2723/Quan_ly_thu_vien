@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,17 +70,16 @@
     <Compile Include="Gradient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="linq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linq.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Personal_Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Personal_Information.Designer.cs">
-      <DependentUpon>Personal_Information.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,18 +101,6 @@
     <Compile Include="Timnguoidoc.Designer.cs">
       <DependentUpon>Timnguoidoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserBorrowBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserBorrowBook.Designer.cs">
-      <DependentUpon>UserBorrowBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserReturnBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserReturnBook.Designer.cs">
-      <DependentUpon>UserReturnBook.cs</DependentUpon>
-    </Compile>
     <Compile Include="XEMSACH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,9 +116,6 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personal_Information.resx">
-      <DependentUpon>Personal_Information.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -139,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuanLyMuon.resx">
       <DependentUpon>QuanLyMuon.cs</DependentUpon>
@@ -149,16 +135,18 @@
     <EmbeddedResource Include="Timnguoidoc.resx">
       <DependentUpon>Timnguoidoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserBorrowBook.resx">
-      <DependentUpon>UserBorrowBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserReturnBook.resx">
-      <DependentUpon>UserReturnBook.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="XEMSACH.resx">
       <DependentUpon>XEMSACH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="linq.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linq.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="linq.dbml.layout">
+      <DependentUpon>linq.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,15 +166,19 @@
   <ItemGroup>
     <Content Include="Resources\216170_delete_icon.png" />
     <Content Include="Resources\add book.gif" />
+    <None Include="Resources\view book gif11.gif" />
+    <None Include="Resources\add book1.gif" />
     <Content Include="Resources\addstudent.gif" />
     <Content Include="Resources\addstudent1.gif" />
     <Content Include="Resources\books_library_shelves_138556_1920x1080.jpg" />
     <Content Include="Resources\icons8-add-book-48.png" />
+    <None Include="Resources\icons8-add-book-481.png" />
     <Content Include="Resources\icons8-add-user-male-50.png" />
     <Content Include="Resources\icons8-book-philosophy-50.png" />
     <Content Include="Resources\icons8-books-50.png" />
     <Content Include="Resources\icons8-exit-sign-50.png" />
     <Content Include="Resources\icons8-return-book-50.png" />
+    <None Include="Resources\icons8-return-book-501.png" />
     <Content Include="Resources\icons8-student-male-100.png" />
     <Content Include="Resources\icons8-student-male-1000 %281%29.png" />
     <Content Include="Resources\icons8-student-male-50.png" />
@@ -194,8 +186,12 @@
     <Content Include="Resources\icons8-view-501.png" />
     <Content Include="Resources\icons8-view-502.png" />
     <Content Include="Resources\motivation1.jpg" />
+    <None Include="Resources\motivation11.jpg" />
     <Content Include="Resources\remove.png" />
     <Content Include="Resources\view book gif1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

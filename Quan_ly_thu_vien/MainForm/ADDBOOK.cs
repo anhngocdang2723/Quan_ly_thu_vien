@@ -20,10 +20,34 @@ namespace MainForm
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       
 
-            string bname = nameb.Text;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (LinqDataContext dt = new LinqDataContext())
+            {
+                try
+                {
+                    Book qlbook = new Book();
+
+                    qlbook.bookID = int.Parse(idb.Text);
+                    qlbook.name = tenb.Text;
+                    qlbook.title = titleb.Text;
+                    qlbook.author = tacgiab.Text;
+                    qlbook.year_published = int.Parse(namb.Text);
+                    qlbook.quantity = int.Parse(slb.Text);
+
+                    dt.Books.InsertOnSubmit(qlbook);
+
+                    dt.SubmitChanges();
+                    MessageBox.Show("dữ liệu đã được nhập", "thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                /*string bname = nameb.Text;
             int bcount = int.Parse(countb.Text);
             string bwriter = writerb.Text;
             string btype = typeb.Text;
@@ -56,10 +80,11 @@ namespace MainForm
             {
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }*/
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

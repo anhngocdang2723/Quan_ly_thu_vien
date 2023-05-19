@@ -88,10 +88,8 @@ namespace Login_form
         private void btnDangKi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Dien_Thong_Tin dtt = new Dien_Thong_Tin();
-            //dtt.Show();
-            Dang_Ki dang_Ki = new Dang_Ki();
-            dang_Ki.Show();
+            Dien_Thong_Tin dtt = new Dien_Thong_Tin();
+            dtt.Show();
             
             this.Hide();
 

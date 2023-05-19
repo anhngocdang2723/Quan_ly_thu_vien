@@ -41,12 +41,9 @@ namespace Login_form
                     cmd.Parameters.AddWithValue("@pnum", txtPhone_Num.Text);
                                         
                     SqlDataReader rd = cmd.ExecuteReader();
-                    Dang_Nhap dn = new Dang_Nhap();
-                    //Dang_Ki dk = new Dang_Ki();
+                    Dang_Ki dk = new Dang_Ki();
                     this.Close();
-                    dn.Show();
-                    MessageBox.Show("Đăng kí tài khoản thành công! Đăng nhập lại.", "Thông báo");
-
+                    dk.Show();
                 }
             }
             catch (SqlException ex)

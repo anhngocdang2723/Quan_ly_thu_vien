@@ -25,9 +25,9 @@ namespace MainForm
             //comboBox1.Text = "Tên Sách";
             if(Save.Share_DbServices.type == "Admin")
             {
-                //btn_MuonSach.Visible = true;
-                //btn_QuanLyMuon.Visible = true;
-                btnChangePass.Visible = true;
+                btn_MuonSach.Visible = true;
+                btn_QuanLyMuon.Visible = true;
+                button3.Visible = true;
                 button4.Visible = true;
                 MN_QLSach.Visible = true;
                 MN_QLNguoiDoc.Visible = true;
@@ -36,15 +36,13 @@ namespace MainForm
                 MN_QLTK_DSTK.Visible = true;
                 MN_QLTK_ThayDoiTT.Visible = true;
                 MN_QLMuon.Visible=true;
-                groupQuanly.Visible = true;
-
             }
             else if (Save.Share_DbServices.type == "User")
             {
-                //btn_MuonSach.Visible = true;
-               // btn_QuanLyMuon.Visible = false;
-                btnChangePass.Visible = true;
-                button4.Visible = true;
+                btn_MuonSach.Visible = true;
+                btn_QuanLyMuon.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
                 MN_QLSach.Visible = false;
                 MN_QLNguoiDoc.Visible = false;
                 MN_QLTK.Visible = true;
@@ -53,7 +51,6 @@ namespace MainForm
                 MN_QLTK_DSTK.Visible = false;
                 MN_QLMuon.Visible=false;
                 MN_QLMuon.Visible=false;
-                groupQuanly.Visible = false;
             }    
             
         }        
@@ -96,57 +93,27 @@ namespace MainForm
             qlm.TopLevel = false;
             qlm.Parent = this;
 
-            qlm.Location = new Point(125, 100);
+            qlm.Location = new Point(200,100);
             qlm.Size = new Size(1000,520);
             
             qlm.Show();
-
-            groupBox4.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void MN_QLSach_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
+        private void thêmSácnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ADDBOOK aDDBOOK=new ADDBOOK();
+            aDDBOOK.Show();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void xemSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void phiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainForm.UserBorrowBook ubrb = new MainForm.UserBorrowBook();
-            ubrb.ShowDialog();
-        }
-
-        private void phiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainForm.UserReturnBook userReturnBook = new MainForm.UserReturnBook();
-            userReturnBook.ShowDialog();
-        }
-
-        private void btnChangePass_Click(object sender, EventArgs e)
-        {
-            MainForm.DoiMatKhau dmk = new MainForm.DoiMatKhau();
-            dmk.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MainForm.Personal_Information personal_Information = new MainForm.Personal_Information();
-            personal_Information.ShowDialog();
-        }
-
-        private void MN_QLTK_ThayDoiTT_Click(object sender, EventArgs e)
-        {
-            MainForm.Personal_Information personal_Information = new MainForm.Personal_Information();
-            personal_Information.ShowDialog();
+            XEMSACH xEMSACH=new XEMSACH();
+            xEMSACH.Show();
         }
     }
 }

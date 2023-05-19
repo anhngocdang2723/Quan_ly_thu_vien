@@ -41,11 +41,11 @@ namespace Login_form
                     cmd.Parameters.AddWithValue("@upass", txtPassword.Text);
 
                     SqlDataReader rd = cmd.ExecuteReader();                    
-                    MessageBox.Show("Tiếp tục điền thông tin.","Thông báo",MessageBoxButtons.OK);
+                    MessageBox.Show("Đăng kí thành công","Thông báo",MessageBoxButtons.OK);
 
                     this.Hide();
-                    Dien_Thong_Tin dtt = new Dien_Thong_Tin();
-                    dtt.Show();
+                    Dang_Nhap dn = new Dang_Nhap();
+                    dn.Show();
 
                 }
             }
